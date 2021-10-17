@@ -25,30 +25,28 @@ enum layers {
 #define GUI_J RGUI_T(KC_J)
 #define ALT_K RALT_T(KC_K)
 #define CTL_L RCTL_T(KC_L)
-#define SFT_SCN RSFT_T(KC_SCLN)
+#define SFT_SCN RSFT_T(KC_SCOLON)
 
-#define PRV_SCN LSFT(KC_LEFT)
-#define NXT_SCN RSFT(KC_RGHT)
-#define OSM_MEH OSM(KC_MEH)
-#define OSM_HPR OSM(KC_HYPR)
+#define CTL_LFT LCTL(KC_LEFT)
+#define CTL_RHT RCTL(KC_RIGHT)
 
-#define NAV_1 LT(_MOUSE, KC_ESC)
-#define NAV_2 LT(_NUMBER, KC_BSPC)
-#define NAV_3 LT(_NAVIGATION, KC_DEL)
-#define NAV_4 LT(_SHORTCUT, KC_TAB)
-#define NAV_5 LT(_FUNCTION, KC_SPC)
-#define NAV_6 LT(_MEDIA, KC_ENT)
+#define NAV_1 LT(_MOUSE, KC_ESCAPE)
+#define NAV_2 LT(_NUMBER, KC_BSPACE)
+#define NAV_3 LT(_NAVIGATION, KC_DELETE)
+#define NAV_4 LT(_MEDIA, KC_TAB)
+#define NAV_5 LT(_FUNCTION, KC_SPACE)
+#define NAV_6 LT(_SHORTCUT, KC_ENTER)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT(
     // |-------|--------|--------|--------|--------|--------|                   |--------|--------|--------|--------|--------|--------|
-        PRV_SCN,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, NXT_SCN,
+        CTL_LFT,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, CTL_RHT,
     // |-------|--------|--------|--------|--------|--------|                   |--------|--------|--------|--------|--------|--------|
-        OSM_MEH,   SFT_A,   CTL_S,   ALT_D,   GUI_F,    KC_G,                        KC_H,   GUI_J,   ALT_K,   CTL_L, SFT_SCN, OSM_MEH,
+        KC_CAPS,   SFT_A,   CTL_S,   ALT_D,   GUI_F,    KC_G,                        KC_H,   GUI_J,   ALT_K,   CTL_L, SFT_SCN, KC_CAPS,
     // |-------|--------|--------|--------|--------|--------|                   |--------|--------|--------|--------|--------|--------|
-        OSM_HPR,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                        KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, OSM_HPRf,
+         KC_MEH,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                        KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_MEH,
     // |-------|--------|--------|--------|--------|--------|--------| |--------|--------|--------|--------|--------|--------|--------|
-                                              NAV_1,   NAV_2,   NAV_3,     NAV_6,   NAV_5,   NAV_4
+                                              NAV_1,   NAV_2,   NAV_3,     NAV_4,   NAV_5,   NAV_6
                                        // |--------|--------|--------| |--------|--------|--------|
   ),
 
@@ -88,15 +86,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                        // |--------|--------|--------| |--------|--------|--------|
   ),
 
-  [_SHORTCUT] = LAYOUT(
+  [_MEDIA] = LAYOUT(
     // |-------|--------|--------|--------|--------|--------|                   |--------|--------|--------|--------|--------|--------|
-          RESET,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   RESET,
+          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
     // |-------|--------|--------|--------|--------|--------|                   |--------|--------|--------|--------|--------|--------|
-          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO, KC_RGUI, KC_RALT, KC_RCTL, KC_RSFT, KC_TRNS,
+          KC_NO, KC_FIND, KC_MPRV, KC_VOLU, KC_VOLD, KC_MNXT,                       KC_NO, KC_RGUI, KC_RALT, KC_RCTL, KC_RSFT, KC_TRNS,
     // |-------|--------|--------|--------|--------|--------|                   |--------|--------|--------|--------|--------|--------|
-          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_TRNS,
+          KC_NO,   KC_NO, KC_MRWD, KC_EJCT, KC_MUTE, KC_MFFD,                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_TRNS,
     // |-------|--------|--------|--------|--------|--------|--------| |--------|--------|--------|--------|--------|--------|--------|
-                                             KC_CUT, KC_COPY, KC_PSTE,     KC_NO,   KC_NO,   KC_NO
+                                              KC_NO, KC_MPLY, KC_MSTP,     KC_NO,   KC_NO,   KC_NO
                                        // |--------|--------|--------| |--------|--------|--------|
   ),
 
@@ -112,15 +110,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                        // |--------|--------|--------| |--------|--------|--------|
   ),
 
-  [_MEDIA] = LAYOUT(
+  [_SHORTCUT] = LAYOUT(
     // |-------|--------|--------|--------|--------|--------|                   |--------|--------|--------|--------|--------|--------|
-          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+          RESET,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   RESET,
     // |-------|--------|--------|--------|--------|--------|                   |--------|--------|--------|--------|--------|--------|
-          KC_NO, KC_FIND, KC_MPRV, KC_VOLU, KC_VOLD, KC_MNXT,                       KC_NO, KC_RGUI, KC_RALT, KC_RCTL, KC_RSFT, KC_TRNS,
+          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO, KC_RGUI, KC_RALT, KC_RCTL, KC_RSFT, KC_TRNS,
     // |-------|--------|--------|--------|--------|--------|                   |--------|--------|--------|--------|--------|--------|
-          KC_NO,   KC_NO, KC_MRWD, KC_EJCT, KC_MUTE, KC_MFFD,                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_TRNS,
+          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_TRNS,
     // |-------|--------|--------|--------|--------|--------|--------| |--------|--------|--------|--------|--------|--------|--------|
-                                              KC_NO, KC_MPLY, KC_MSTP,     KC_NO,   KC_NO,   KC_NO
+                                             KC_CUT, KC_COPY, KC_PSTE,     KC_NO,   KC_NO,   KC_NO
                                        // |--------|--------|--------| |--------|--------|--------|
   )
 };

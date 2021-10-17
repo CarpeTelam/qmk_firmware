@@ -59,7 +59,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifdef RGB_MATRIX_ENABLE
   # define RGB_MATRIX_KEYPRESSES // reacts to keypresses
-  // # define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
+  # define RGB_MATRIX_KEYRELEASES // reacts to keyreleases (instead of keypresses)
   // # define RGB_DISABLE_AFTER_TIMEOUT 0 // number of ticks to wait until disabling effects
   # define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
   # define RGB_MATRIX_FRAMEBUFFER_EFFECTS
