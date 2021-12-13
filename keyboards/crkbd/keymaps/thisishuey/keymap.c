@@ -13,9 +13,9 @@ enum layers {
   _MOUSE,
   _NUMBER,
   _NAVIGATION,
-  _SHORTCUT,
+  _MEDIA,
   _FUNCTION,
-  _MEDIA
+  _CONFIG
 };
 
 #define SFT_A LSFT_T(KC_A)
@@ -35,7 +35,7 @@ enum layers {
 #define NAV_3 LT(_NAVIGATION, KC_DELETE)
 #define NAV_4 LT(_MEDIA, KC_TAB)
 #define NAV_5 LT(_FUNCTION, KC_SPACE)
-#define NAV_6 LT(_SHORTCUT, KC_ENTER)
+#define NAV_6 LT(_CONFIG, KC_ENTER)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT(
@@ -86,6 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,
                                          KC_CUT, KC_COPY, KC_PSTE,   XXXXXXX, XXXXXXX, XXXXXXX
   )
+
 };
 
 #ifdef OLED_DRIVER_ENABLE

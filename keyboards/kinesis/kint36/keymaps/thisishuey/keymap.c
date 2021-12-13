@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,
                                                            CTL_LFT, KC_HYPR,
                                                                      KC_MEH,
-                                                    NAV_2,   NAV_3,   NAV_1,
+                                                    NAV_1,   NAV_2,   NAV_3,
 
     // Right Hand
       KC_F9, KC_F10,  KC_F11,  KC_F12, KC_PSCR, KC_SLCK, KC_PAUS, KC_HOME,  KC_END,
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                        KC_RGUI, KC_RALT, KC_RCTL, KC_RSFT,
             KC_HYPR, CTL_RHT,
              KC_MEH,
-              NAV_6,   NAV_4,   NAV_5
+              NAV_4,   NAV_5,   NAV_6
   ),
 
   [_MOUSE] = LAYOUT (
